@@ -9,7 +9,7 @@
 .container {
     display: flex;
     max-width: 360px;
-    max-height: 160px;
+    max-height: 360px;
     flex-wrap: wrap;
     justify-content: center;
 }
