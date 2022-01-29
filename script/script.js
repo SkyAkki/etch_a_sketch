@@ -9,18 +9,20 @@ let hoverDiv = document.querySelectorAll(".container > div")
 let isDown = false;
 hoverDiv.forEach(element => {
     element.addEventListener("mouseenter", function(event)
-{
-    element.addEventListener("mousedown", function(event)
     {
-        isDown = true;
-    })
-    element.addEventListener("mouseup",function(event)
-    {
-        isDown = false;
-    })
-    if (isDown)
-    {
-        event.target.style.backgroundColor = "purple";
-    }
-});
+        element.addEventListener("mousedown", function(event)
+        {
+            isDown = true;
+            event.target.style.backgroundColor = "purple";
+            event.preventDefault();
+        })
+        document.addEventListener("mouseup",function(event)
+        {
+            isDown = false;
+        })
+        if (isDown)
+        {
+            event.target.style.backgroundColor = "purple";
+        }
+    });
 });
