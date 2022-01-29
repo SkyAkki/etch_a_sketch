@@ -3,13 +3,13 @@
     margin: 0px;
 } */
 .container div {
-    border: black solid 0.5px;
+    border: black solid 0.01px;
     padding: 10px;
 }
 .container {
     display: flex;
-    max-width: 360px;
-    max-height: 360px;
+    width: 360px;
+    height: 360px;
     flex-wrap: wrap;
     justify-content: center;
 }
