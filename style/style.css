@@ -3,7 +3,7 @@
     margin: 0px;
 } */
 .container div {
-    border: black solid 0.01px;
+    border: 0px;
     padding: 10px;
 }
 .container {
@@ -12,6 +12,7 @@
     height: 360px;
     flex-wrap: wrap;
     justify-content: center;
+    border: black solid 0.1px;
 }
 .grid {
     display: flex;
