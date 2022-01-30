@@ -7,3 +7,8 @@ Bug List:
 [Solved using event.preventDefault(); in the mouseDown event listener]
 3. If mousedown is started inside the grid but mouseup is done outside the grid, again the isDown is always stuck to True.
 [Solved using document.eventListener at mouseUp event]
+
+
+Important Learnings:
+1. Function call returns the control to the line it is called from. So when calling by button click it will return to that line instead of the default call. (Seems obvious at this point now)
+[Solved by using same global variable to capture the control return at both default and onClick call]

@@ -1,12 +1,11 @@
 let gridSize;
 let newGrid = document.querySelector(".container");
-loadGrid(gridSize = 50);
-let hoverDiv = document.querySelectorAll(".container > div");
+let gridCellDivs = loadGrid(gridSize = 5);
 let isDown = false;
 
 function draw(colorChoice)
 {
-    hoverDiv.forEach(element => {
+    gridCellDivs.forEach(element => {
         element.addEventListener("mouseenter", function(event)
         {
             element.addEventListener("mousedown", function(event)
@@ -47,13 +46,12 @@ function rainbow()
 }
 function clearall()
 {
-    hoverDiv.forEach(element => {
+    gridCellDivs.forEach(element => {
         element.style.backgroundColor = "white"
     })
 }
 function loadGrid(gridSize)
 {
-
     let i = 0;
     newheight = 360/gridSize;
     newpadding = newheight/2;
@@ -63,6 +61,8 @@ function loadGrid(gridSize)
         newDiv.style.padding = `${newpadding}px`;
         newGrid.appendChild(newDiv);
     }
+    let cellDivs = document.querySelectorAll(".container > div");
+    return cellDivs;
 }
 function changeGrid()
 {
@@ -70,10 +70,10 @@ function changeGrid()
     inputValue = parseInt(input);
     if (input != null && inputValue<=100) 
     {
-    //   while (newGrid.firstChild) 
-    //   {
-    //     newGrid.firstChild.remove()
-    //   }
-      loadGrid(inputValue);
+      while (newGrid.firstChild) 
+      {
+        newGrid.firstChild.remove()
+      }
+      gridCellDivs = loadGrid(inputValue);
     }
 }
