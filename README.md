@@ -12,3 +12,6 @@ Bug List:
 Important Learnings:
 1. Function call returns the control to the line it is called from. So when calling by button click it will return to that line instead of the default call. (Seems obvious at this point now)
 [Solved by using same global variable to capture the control return at both default and onClick call]
+
+Links:
+1. Link to button style code : https://stackoverflow.com/questions/52618358/transparent-background-overriding-box-shadow/52620619

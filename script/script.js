@@ -63,6 +63,7 @@ function eraser()
 function rainbow()
 {
     rainbowColorEnable = true;
+    draw();
 }
 function clearall()
 {
