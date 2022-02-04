@@ -2,6 +2,8 @@ let gridSize;
 let newGrid = document.querySelector(".container");
 let gridCellDivs = loadGrid(gridSize = 5);
 let isDown = false;
+let rainbowColorEnable = false;
+let rainbowColor;
 
 function draw(colorChoice)
 {
@@ -11,7 +13,15 @@ function draw(colorChoice)
             element.addEventListener("mousedown", function(event)
             {
                 isDown = true;
-                event.target.style.backgroundColor = colorChoice;
+                if (rainbowColorEnable)
+                {
+                    randomColor();
+                    event.target.style.backgroundColor = rainbowColor;
+                }
+                else
+                {
+                    event.target.style.backgroundColor = colorChoice;
+                }
                 event.preventDefault();
             })
             document.addEventListener("mouseup",function(event)
@@ -20,29 +30,39 @@ function draw(colorChoice)
             })
             if (isDown)
             {
-                event.target.style.backgroundColor = colorChoice;
+                if (rainbowColorEnable)
+                {
+                    randomColor();
+                    event.target.style.backgroundColor = rainbowColor;
+                }
+                else
+                {
+                    event.target.style.backgroundColor = colorChoice;
+                }
             }
         });
     });
 }
 function randomColor()
 {
-    
+    let randomColor = Math.floor(Math.random()*16777215).toString(16);
+    rainbowColor = "#"+randomColor;
 }
 function pencil()
 {
     let colorChoice = "purple";
+    rainbowColorEnable = false;
     draw(colorChoice);
 }
 function eraser()
 {
     let colorChoice = "white";
+    rainbowColorEnable = false;
     draw(colorChoice);
 }
 function rainbow()
 {
-    let colorChoice = randomColor();
-    draw(colorChoice);
+    rainbowColorEnable = true;
 }
 function clearall()
 {
