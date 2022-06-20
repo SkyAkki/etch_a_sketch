@@ -29,8 +29,9 @@ body {
 .but-container{
     display: flex;
     position: relative;
-    width: 150px;
+    width: 50%;
     height: 60px;
+    justify-content: center;
 }
 button{
     z-index:1;
@@ -61,4 +62,15 @@ button{
     height: 100%;
     width: 100%;
     position: absolute;
+}
+@media (max-width : 600px) {
+    .ui{
+        flex-direction: column;
+        padding-left: 0px;
+        align-items: center;
+    }
+    .ui::after{
+        content: "Touch functionality not optimised yet. Please view this project in a desktop.";
+        text-align: center;
+    }
 }
