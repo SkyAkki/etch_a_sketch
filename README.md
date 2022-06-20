@@ -1,5 +1,8 @@
 # etch_a_sketch
 
+Live Project Link:
+https://skyakki.github.io/etch_a_sketch/
+
 Bug List:
 1. isDown is set to false initially, so when the first mouseenter event is triggered it will not paint the cell.
 [Solved using paint cell at mousedown event trigger]
